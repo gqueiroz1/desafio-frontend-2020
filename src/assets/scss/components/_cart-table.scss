@@ -1,0 +1,108 @@
+@import "../utils/variables";
+
+.cart-list{
+
+  &__table{
+    width: 100%;
+  }
+
+  &__table-row{
+    display: flex;
+    padding: 2rem 0;
+    align-items: center;
+    border-bottom: 1px solid $color-gray-light;
+  }
+
+  &__table-head{
+    flex: 1 1 100%;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $color-gray-darker;
+  }
+
+  &__table-head:first-child{
+    margin-left: 3.4rem;
+  }
+
+  &__table-data{
+    flex: 1 1 100%;
+    color: $color-gray-darker;
+  }
+  &__table-data--trash-icon{
+    flex: 0 0 2rem;
+    margin-right: 2rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    //Browsers mais antigos
+    background-image: url("../../../../public/icons/garbage.svg");
+    background-size: cover;
+    
+    //Browsers atualizados
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: $color-gray-light;
+      -webkit-mask-image: url("../../../../public/icons/garbage.svg");
+              mask-image: url("../../../../public/icons/garbage.svg");
+      -webkit-mask-size: cover;
+              mask-size: cover;
+      background-image: none;
+    }
+  }
+
+  &__table-data--product-name{
+    font-size: 1.8rem;
+    font-weight: bold;
+    max-width: 50%;
+  }
+
+  &__table-data--product-category{
+    display: block;
+    font-weight: bold;
+    color: $color-purple;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  &__table-data--quantity-wrapper{
+
+  }
+
+  &__table-data-minus, &__table-data-plus{
+    border: 1px solid $color-gray;
+    padding: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $color-gray-light;
+    cursor: pointer;
+  }
+
+  &__table-data-minus{
+    border-radius: 3px 0 0 3px;
+  }
+
+  &__table-data-plus{
+    border-radius: 0 3px 3px 0;
+  }
+
+  &__table-data-quantity-value{
+    border-top: 1px solid $color-gray;
+    border-bottom: 1px solid $color-gray;
+    padding: 1rem 1.8rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  &__table-data--price{
+    font-size: 1.8rem;
+    color: $color-gray;
+  }
+
+  &__price, &__price-total{
+    font-weight: bold;
+    color: $color-gray-darker;
+  }
+
+}

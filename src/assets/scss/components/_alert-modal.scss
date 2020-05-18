@@ -1,0 +1,93 @@
+@import '../utils/variables';
+
+.alert-modal{
+  &__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    background-color: rgba(0,0,0, .5);
+  }
+
+  &__box{
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 3rem 0 4rem 0;
+  }
+
+  &__close-btn{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: $color-gray;
+    cursor: pointer;
+  }
+
+  &__icon{
+    margin: 5rem auto 3rem auto;
+    width: 10rem;
+    height: 10rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+  }
+
+  &__text{
+    font-size: 2.6rem;
+    text-align: center;
+    color: $color-gray-dark;
+    margin-bottom: 3rem;
+  }
+
+  &__btn{
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 3px;
+    margin: 0 auto;
+    display: block;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__btn-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+    background-repeat: no-repeat;
+    transition: all .4s ease;
+
+    //Browsers mais antigos
+    background-image: url("../../../../public/icons/left-arrow.svg");
+    background-size: cover;
+    
+    //Browsers atualizados
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: $color-purple;
+      -webkit-mask-image: url("../../../../public/icons/left-arrow.svg");
+              mask-image: url("../../../../public/icons/left-arrow.svg");
+      -webkit-mask-size: cover;
+              mask-size: cover;
+      background-image: none;
+    }
+  }
+
+  &__btn-text{
+    color: $color-purple;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+  }
+}
+
+.fade-modal{
+  opacity: 1;
+}

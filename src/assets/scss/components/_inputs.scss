@@ -1,0 +1,32 @@
+@import "../utils/variables";
+
+.mktplace-input{
+  color: $color-gray-lighter;
+  padding: .75rem 1rem;
+  flex: 1;
+  border: 1px solid $color-gray;
+  border-radius: 3px;
+  font-size: 1.6rem;
+  font-family: 'Source Sans Pro';
+
+
+  &::-webkit-input-placeholder{
+    color: $color-gray-lighter;
+  }
+
+  &::-moz-placeholder{
+    color: $color-gray-lighter;
+  }
+
+  &:-ms-input-placeholder{
+    color: $color-gray-lighter;
+  }
+
+  &::-ms-input-placeholder{
+    color: $color-gray-lighter;
+  }
+
+  &::placeholder{
+    color: $color-gray-lighter;
+  }
+}

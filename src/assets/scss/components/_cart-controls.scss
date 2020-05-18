@@ -1,0 +1,94 @@
+@import '../utils/variables';
+
+.cart-list{
+  &__controls{
+    display: flex;
+    
+    @media (max-width: 36em){
+      padding: 0 1.5rem;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__clear-cart{
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 36em){
+      flex: 1 1 100%;
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__clear-cart-trash-icon{
+    width: 2rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    //Browsers mais antigos
+    background-image: url("../../../../public/icons/garbage.svg");
+    background-size: cover;
+    
+    //Browsers atualizados
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: $color-gray-light;
+      -webkit-mask-image: url("../../../../public/icons/garbage.svg");
+              mask-image: url("../../../../public/icons/garbage.svg");
+      -webkit-mask-size: cover;
+              mask-size: cover;
+      background-image: none;
+    }
+  }
+
+  &__clear-cart-text{
+    cursor: pointer;
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    color: $color-gray;
+  }
+
+  &__controls-buttons{
+    margin: 0 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 50%;
+
+    @media (max-width: 36em){
+      flex: 1 1 100%;
+    }
+  }
+
+  &__buy-more-btn, &__finish-btn{
+    padding: 2rem 0;
+    flex: 1;
+    border-radius: 3px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all .4s ease;
+  }
+
+  &__finish-btn{
+    margin-left: 2rem;
+    color: #fff;
+    background-color: $color-purple;
+    border: 1px solid #fff;
+
+    &:hover{
+      background-color: #fff;
+      border: 1px solid $color-purple;
+      color: $color-purple;
+    }
+  }
+
+  &__buy-more-btn{
+    background-color: $color-gray-light;
+    color: $color-gray-darker;
+    border: 1px solid #fff;
+
+    &:hover{
+      background-color: #fff;
+      border: 1px solid $color-gray-light;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@import "../utils/variables";
+
+.checkout-form{
+  padding: 5rem 0;
+
+  &__first-group, &__second-group{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__input-group{
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  &__label{
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 1.8rem;
+    color: $color-gray-label;
+  }
+
+  &__input{
+    width: 100%;
+    color: $color-gray;
+    transition: all .2s ease;
+  }
+
+  &__input-error{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-size: 1.5rem;
+    color: tomato;
+    transition: all .2s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__finish-btn-wrapper{
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__finish-btn{
+    display: block;
+    padding: 1.6rem 0;
+    border: 1px solid #fff;
+    background-color: $color-purple;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+    margin-top: 1rem;
+    transition: all .4s ease;
+
+    &:hover{
+      border: 1px solid $color-purple;
+      background-color: #fff;
+      color: $color-purple;
+    }
+  }
+}
+
+.show-input-error{
+  transform: translateY(15px);
+  opacity: 1;
+  visibility: visible;
+}
+
+.invalid-input{
+  border: 1px solid tomato;
+}

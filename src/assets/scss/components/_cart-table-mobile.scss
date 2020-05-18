@@ -1,0 +1,107 @@
+@import "../utils/variables";
+
+.cart-list-mobile{
+
+  &__body{
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid $color-gray-light;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__product-image{
+    width: 6rem;
+    height: 6rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+
+  &__product-description{
+    flex: 1;
+    margin-left: 2rem;
+  }
+
+  &__product-category{
+    font-size: 1.8rem;
+    color: $color-purple;
+    font-weight: bold;
+    display: block;
+    margin-bottom: .5rem;
+  }
+
+  &__product-name{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $color-gray-darker;
+  }
+
+  &__quantity-wrapper{
+    margin: 2rem 0;
+  }
+
+  &__minus, &__plus{
+    border: 1px solid $color-gray;
+    padding: .5rem 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $color-gray-light;
+    cursor: pointer;
+  }
+
+  &__minus{
+    border-radius: 3px 0 0 3px;
+  }
+
+  &__quantity-value{
+    border-top: 1px solid $color-gray;
+    border-bottom: 1px solid $color-gray;
+    padding: .5rem 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  &__plus{
+    border-radius: 0px 3px 3px 0px;
+  }
+
+  &__price-wrapper{
+    font-size: 1.8rem;
+    color: $color-gray;
+  }
+
+  &__price-total{
+    color: $color-gray-darker;
+    font-weight: bold;
+  }
+
+  &__remove{
+    align-self: center;
+  }
+
+  &__trash-icon{
+    width: 2rem;
+    margin-right: 1rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    //Browsers mais antigos
+    background-image: url("../../../../public/icons/garbage.svg");
+    background-size: cover;
+    
+    //Browsers atualizados
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: $color-gray-light;
+      -webkit-mask-image: url("../../../../public/icons/garbage.svg");
+              mask-image: url("../../../../public/icons/garbage.svg");
+      -webkit-mask-size: cover;
+              mask-size: cover;
+      background-image: none;
+    }
+  }
+
+  &__remove-text{
+
+  }
+}

@@ -1,0 +1,67 @@
+@import "../utils/variables";
+
+.searchbar{
+
+  &__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px 5px $gray-light-shadow;
+    border-radius: 3px;
+    padding: 2rem;
+  }
+
+  &__paragraph{
+    font-size: 1.8rem;
+    color: $color-gray;
+    flex: 1 1 20%;
+    font-weight: bold;
+
+    @media (max-width: 48em){
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 32.5em){
+      display: none;
+    }
+  }
+
+  &__input-group{
+    flex: 1 1 80%;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  &__input{
+    border-radius: 3px 0px 0px 3px !important;
+  }
+
+
+  &__icon-wrapper{
+    cursor: pointer;
+    padding: .75rem;
+    background-color: $color-purple;
+    border-radius: 0px 3px 3px 0px !important;
+  }
+
+  &__icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    background-color: #fff;
+
+    //Browsers mais antigos
+   background-image: url("../../../../public/icons/magnifying-glass.svg");
+   background-size: cover;
+    
+    //Browsers atualizados
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      -webkit-mask-image: url("../../../../public/icons/magnifying-glass.svg");
+              mask-image: url("../../../../public/icons/magnifying-glass.svg");
+      -webkit-mask-size: cover;
+              mask-size: cover;
+      background-image: none;
+      
+   }
+  }
+}

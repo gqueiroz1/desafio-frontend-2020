@@ -1,0 +1,110 @@
+@import "../utils/variables";
+
+.header{
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  box-shadow: 0px 2px 10px 2px $gray-light-shadow;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+
+  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo{
+    color: $color-gray;
+    font-size: 2.5rem;
+    font-family: 'Gotham';
+  }
+
+  &__logo--purple{
+    color: $color-purple;
+  }
+
+  &__nav-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__nav-item + &__nav-item{
+    margin-left: 2rem;
+  }
+
+  &__nav-link{
+    display: block;
+    color: $color-gray;
+    font-size: 1.6rem;
+    transition: all .2s ease-in;
+  }
+
+  &__nav-link[href="/"]{
+    &:hover{
+      color: $color-purple;
+
+      &::after{
+        width: 100%;
+      }
+    }
+
+    &::after{
+      content: "";
+      width: 0px;
+      height: .3rem;
+      background-color: $color-purple;
+      display: block;
+      transition: all .2s ease-in;
+    }
+  }
+
+  &__nav-link[href="/carrinho"]{
+    position: relative;
+  }
+
+  &__shopping-cart-icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    transition: all .4s ease;
+
+    //Browsers mais antigos
+   background-image: url("../../../../public/icons/shopping-cart.svg");
+   background-size: cover;
+    
+    //Browsers atualizados
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: $color-purple;
+      -webkit-mask-image: url("../../../../public/icons/shopping-cart.svg");
+              mask-image: url("../../../../public/icons/shopping-cart.svg");
+      -webkit-mask-size: cover;
+              mask-size: cover;
+      background-image: none;
+   }
+  }
+
+  &__shopping-cart-notification{
+    position: absolute;
+    right: -1.2rem;
+    bottom: 0rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: $color-red;
+    border-radius: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+    font-weight: bold;
+    line-height: 0.7;
+
+    @media (max-width: 36em){
+      right: -.5rem;
+    }
+  }
+}

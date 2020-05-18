@@ -1,0 +1,19 @@
+.cart-list{
+  padding: 5rem 0;
+}
+
+.cart-desktop{
+  display: none;
+
+  @media (min-width: 577px){
+    display: block;
+  }
+}
+
+.cart-mobile{
+  display: block;
+
+  @media (min-width: 36em){
+    display: none;
+  }
+}
